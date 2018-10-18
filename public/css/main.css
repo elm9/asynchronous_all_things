@@ -11,7 +11,11 @@ body {
     font-size: xx-large;
     background: #ff5722;
 }
-.what{
+#button-row {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#what{
     background: #ff5722;
     border-radius: 50px;
     width: 100%;
