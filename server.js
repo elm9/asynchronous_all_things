@@ -2,8 +2,7 @@
 // ********************************
 const express = require("express");
 const bodyparser = require("body-parser");
-var path = require("path");
-var http = require('http'); 
+var path = require("path"); 
 
 // express setup
 // ********************************
