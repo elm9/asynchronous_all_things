@@ -15,7 +15,7 @@ body {
     padding-top: 50px;
     padding-bottom: 50px;
 }
-#what{
+#what {
     background: #ff5722;
     border: 5px ridge #ffca28;
     border-radius: 50px;
@@ -23,8 +23,24 @@ body {
     height: 100px;
     text-align: center;
     padding:22px;
+    margin-bottom: 25px;
     font-family: 'Fira Sans Condensed', sans-serif;
     font-size: xx-large;
     color: white;
     text-shadow: 2px 2px 5px black;
+}
+#code {
+    width: 100%;
+}
+#textBox {
+    background: lightgoldenrodyellow;
+    border: 3px ridge goldenrod;
+    font-family: 'Chakra Petch', sans-serif;
+    color: black;
+    width: 50%;
+    font-size: xx-large;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 20px;
 }

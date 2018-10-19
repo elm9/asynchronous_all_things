@@ -1,40 +1,50 @@
 // **************************************************************
-   
+
    // listening to the document 
         $(document).ready(function () {
             console.log("app.js connected");
 
-// **************************************************************
+// ******************************************************************************
     
     // on click CALLBACKS button
     $("#callback").on("click", function () {
         event.preventDefault();
-        //display some text describing what's going on
-        $("#what").text("This is a callback demonstrating "); 
-    // here's the callback
-        // the callback code image is the second image in the html 
-        console.log(document.code);
-        let image = document.image[0];
-        // let downloadImage programatically create a new image
-        let downloadImage = new Image();
-        // set the handler for the onload event
-        // once the new image is loaded it will trigger a function
-        downloadImage.onload = function(){
-            // here the image source destination is named as this
-            image.src = this.src;   
-        };
-        // this is where the new image source is actually named
-        downloadImage.src = "https://media.giphy.com/media/l0HlOhvOqvyhudoWY/giphy.gif";
-
+        // empty textbox on click
+        $("#textBox").empty();
+        // display some text describing what's going on
+        $("#what").text("This callback demonstrates the saySomething function"); 
+        // display image of code that's doing the stuff
+        $("#code").attr("src", "../images/callback.png");
+        // ************************ here's the callback
+        // here is where the function is stated
+            // it takes in the anything param and callback is passed
+        function saySomething(anything, callback) {
+            // the textbox is appended with what will be said
+            $("#textBox").append("I'm going to say " + anything + "! ");
+            // the callback is... called
+            callback();
+          }
+        // the callback function is defined here in the second argument
+        saySomething('poop', function() {
+            // I set a timeout for 500ms to visibly show when it happened
+            setTimeout(function(){
+            $("#textBox").append("There, I said it.");
+            }, 500);
+          });
     });
 
-// **************************************************************
+// ******************************************************************************
     
     // on click PROMISES button
     $("#promise").on("click", function () {
         event.preventDefault();
-        //display some text describing what's going on
+        // empty textbox on click
+        $("#textBox").empty();
+        // display some text describing what's going on
         $("#what").text("promises");
+        // display image of code that's doing the stuff
+        $("#code").attr("src", "../images/promise.png");
+        // here's the promise, don't break it plz
     });
 
 // **************************************************************
@@ -42,8 +52,13 @@
     // on click ASYNC/AWAIT button
     $("#asyncAwait").on("click", function () {
         event.preventDefault();
-        //display some text describing what's going on
+        // empty textbox on click
+        $("#textBox").empty();
+        // display some text describing what's going on
         $("#what").text("async / await");
+        // display image of code that's doing the stuff
+        $("#code").attr("src", "../images/asyncAwait.png");
+        // here's the async/await
     });
 
 // **************************************************************
@@ -51,8 +66,13 @@
     // on click GENERATORS button
     $("#generator").on("click", function () {
         event.preventDefault();
-        //display some text describing what's going on
+        // empty textbox on click
+        $("#textBox").empty();
+        // display some text describing what's going on
         $("#what").text("generator");
+        // display image of code that's doing the stuff
+        $("#code").attr("src", "../images/generator.png");
+        // here's the generator
     });
 
 // **************************************************************
