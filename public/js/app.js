@@ -73,13 +73,28 @@
         // empty textbox on click
         $("#textBox").empty();
         // display some text describing what's going on
-        $("#what").text("async / await");
+        $("#what").text("The waitForIt function shows how an async function uses await.");
         // display image of code that's doing the stuff
         $("#code").attr("src", "../images/asyncAwait.png");
         // here's the async/await
+        // async function waitForIt is called
+        async function waitForIt() {
+            // text box is appended to show the function has started
+            $("#textBox").append("Wait for it... <br>");
+            // let the new promise function begin
+            let promise = new Promise(function(resolve, reject) {
+              // set a timeout to give it a second to complete 
+                setTimeout(function(){
+                resolve("done!")}, 1000)
+            });
+            // let the result wait for the promise before it is posted
+            let result = await promise;
+            $("#textBox").append(result);
+          }
+          waitForIt();
     });
 
-// **************************************************************
+// *******************************************************************************
     
     // on click GENERATORS button
     $("#generator").on("click", function () {
