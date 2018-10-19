@@ -33,7 +33,7 @@
           });
     });
 
-// ******************************************************************************
+// ***********************************************************************************
     
     // on click PROMISES button
     $("#promise").on("click", function () {
@@ -41,13 +41,31 @@
         // empty textbox on click
         $("#textBox").empty();
         // display some text describing what's going on
-        $("#what").text("promises");
+        $("#what").text("The promise function calls the first value, then returns the second value");
         // display image of code that's doing the stuff
         $("#code").attr("src", "../images/promise.png");
         // here's the promise, don't break it plz
+        // let's promise to practice simple math
+        let promise = new Promise(function(resolve, reject) {
+            // here this states the first value as 1
+            resolve(1);
+          });
+        // the new promise function is called
+                // then a function with the value 1 is called
+        promise.then(function(val) {
+            // the first value is sent to the text box
+            $("#textBox").text("first number: " + val);
+            // the value is to be returned and added 2 
+            return val + 2;
+        // then the function with the new value is called
+        }).then(function(val) {
+            // the new value is sent to the text box
+            $("#textBox").append(" <br> second number: " + val);
+        })
+            
     });
 
-// **************************************************************
+// **********************************************************************************
     
     // on click ASYNC/AWAIT button
     $("#asyncAwait").on("click", function () {
