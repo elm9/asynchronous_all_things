@@ -102,11 +102,29 @@
         // empty textbox on click
         $("#textBox").empty();
         // display some text describing what's going on
-        $("#what").text("generator");
+        $("#what").text("The generator function demonstrates the power of yield and return");
         // display image of code that's doing the stuff
         $("#code").attr("src", "../images/generator.png");
         // here's the generator
+        // let's generate some more math 
+        // here the generator function is called
+        function * generator(i) {
+            // the first value is yielded
+            yield i;
+            // the next value is returned, ending the function
+            return i + 11;
+            // this next value is not expected to return
+            yield 5;
+        }
+        // let's make i = 10
+        let gen = generator(10);
+        // yield i;
+        $("#textBox").append(gen.next().value + "<br>");
+        // return i+11;
+        $("#textBox").append(gen.next().value + "<br>");
+        // yield 5; -- this is undefined
+        $("#textBox").append(gen.next().value);
     });
 
-// **************************************************************
+// **************************************************************************
 });
